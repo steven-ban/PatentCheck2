@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+public slots:
+    void showSettings();
+private slots:
+    void on_actionSettings_2_triggered();
 };
 
 #endif // MAINWINDOW_H
