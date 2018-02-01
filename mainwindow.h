@@ -33,6 +33,9 @@ private:
     void checkDesriptions();
     void checkFigures();
 
+signals:
+    void decisionTextChanged(QString);
+
 public slots:
     void showSettings();
     void check();

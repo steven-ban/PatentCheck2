@@ -8,6 +8,11 @@ TextDlg::TextDlg(QWidget *parent) :
     ui2->setupUi(this);
 }
 
+void TextDlg::changeText(QString text){
+    ui2->textBrowser->setText(text);
+    return;
+}
+
 TextDlg::~TextDlg()
 {
     delete ui2;

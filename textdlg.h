@@ -15,6 +15,9 @@ public:
     explicit TextDlg(QWidget *parent = 0);
     ~TextDlg();
 
+public slots:
+    void changeText(QString);
+
 private:
     Ui::TextDlg *ui2;
 

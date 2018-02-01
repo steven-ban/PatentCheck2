@@ -6,6 +6,7 @@
 #include<QDebug>
 #include<QTextDocument>
 #include<QTextBlock>
+#include<QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSettings_2, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(check()));
     connect(ui->generateButton, SIGNAL(clicked()), this, SLOT(generateDecision()));
+    connect(this, SIGNAL(decisionTextChanged(QString)), textDlg, SLOT(changeText(QString)));
 
 }
 
@@ -92,6 +94,12 @@ void MainWindow::check(){
 
 void MainWindow::generateDecision(){
     // 生成通知书
+    QFile decisionFile("DecisionText.txt", this);
+    decisionFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString decisionText = decisionFile.readAll();
+    decisionFile.close();
+
+    emit decisionTextChanged(decisionText);
     textDlg->show();
 }
 
