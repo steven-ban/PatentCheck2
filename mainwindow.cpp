@@ -4,6 +4,8 @@
 #include<QSettings>
 #include<QMessageBox>
 #include<QDebug>
+#include<QTextDocument>
+#include<QTextBlock>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,6 +34,12 @@ void MainWindow::initPatent(){
     QRegularExpression descriptionRx("^\\[(\\d){4}\\]", QRegularExpression::MultilineOption);
     this->descriptionList = ui->descriptionTextEdit->toPlainText().split(descriptionRx);
     qDebug()<<"Description number: "<<this->descriptionList.count();
+
+    // 获取说明书中的发明名称
+    QTextDocument* despDoc = ui->descriptionTextEdit->document();
+    qDebug()<<"Line count: "<<despDoc->lineCount();
+    this->title = despDoc->findBlockByLineNumber(0).text();
+    qDebug()<<"Description Title: "<<this->title;
 
 }
 

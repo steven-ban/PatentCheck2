@@ -26,6 +26,7 @@ private:
     QStringList claimList;
     QStringList descriptionList;
     QStringList figureList;
+    QString title;  // 发明名称
 
     void initPatent();
     void checkClaims();
@@ -35,6 +36,7 @@ private:
 public slots:
     void showSettings();
     void check();
+    void generateDecision();
 
 };
 
