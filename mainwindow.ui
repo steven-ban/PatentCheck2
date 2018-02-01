@@ -75,6 +75,13 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="generateButton">
+            <property name="text">
+             <string>Generate</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
        </layout>
