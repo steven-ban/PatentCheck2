@@ -5,6 +5,7 @@
 #include "ui_textdlg.h"
 
 #include <QMainWindow>
+#include<QStringList>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,15 @@ public:
 private:
     Ui::MainWindow *ui;
     TextDlg *textDlg;
+
+    QStringList claimList;
+    QStringList descriptionList;
+    QStringList figureList;
+
+    void initPatent();
+    void checkClaims();
+    void checkDesriptions();
+    void checkFigures();
 
 public slots:
     void showSettings();

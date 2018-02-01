@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include<QSettings>
+#include<QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,7 +19,32 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
+void MainWindow::initPatent(){
+
+}
+
+void MainWindow::checkClaims(){
+
+}
+
+void MainWindow::checkDesriptions(){
+
+}
+
+void MainWindow::checkFigures(){
+
+}
+
 void MainWindow::check(){
+    // 如果内容全部为空
+    if(ui->claimsTextEdit->toPlainText() == "" && \
+            ui->descriptionTextEdit->toPlainText() == "" && \
+            ui->drawingsTextEdit->toPlainText() == ""){
+        int ret = QMessageBox::warning(this, tr("NO Content Input!"), \
+                                                tr("No content is input.\nPlease paste your content here."), \
+                                                QMessageBox::Cancel | QMessageBox::Ok);
+        return;
+    }
 
 
     // 生成通知书
