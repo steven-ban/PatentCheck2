@@ -27,19 +27,35 @@ void MainWindow::initPatent(){
     // 使用正则表达式来分割权利要求，得到权利要求列表
     QRegularExpression claimRx("^(\\d+).", QRegularExpression::MultilineOption);
     this->claimList = ui->claimsTextEdit->toPlainText().split(claimRx);
+    this->claimList.removeFirst();  //将第一个回车符去掉
     qDebug()<<"Claims: "<<ui->claimsTextEdit->toPlainText();
     qDebug()<<"Claim number: "<<this->claimList.count();
+    for(int i=0; i!=this->claimList.count(); ++i){
+        qDebug()<<"Claim "<<i+1<<" : "<<this->claimList.at(i);
+    }
 
     // 使用正则表达式来分割说明书，得到说明书段落列表
     QRegularExpression descriptionRx("^\\[(\\d){4}\\]", QRegularExpression::MultilineOption);
     this->descriptionList = ui->descriptionTextEdit->toPlainText().split(descriptionRx);
+    this->descriptionList.removeFirst();
     qDebug()<<"Description number: "<<this->descriptionList.count();
+    for(int i = 0; i!=this->descriptionList.count();++i){
+        qDebug()<<"Description "<<i+1<<this->descriptionList.at(i);
+    }
 
     // 获取说明书中的发明名称
     QTextDocument* despDoc = ui->descriptionTextEdit->document();
     qDebug()<<"Line count: "<<despDoc->lineCount();
     this->title = despDoc->findBlockByLineNumber(0).text();
     qDebug()<<"Description Title: "<<this->title;
+
+    // 获取图号
+    // QRegularExpression figureRx("^[\\u56fe]{1}")
+    this->figureList=ui->drawingsTextEdit->toPlainText().split('\n');
+    this->figureList.removeAll(""); // 去除所有的空白行
+    for(int i=0; i!=this->figureList.count(); ++i){
+        qDebug()<<"Figure "<<i+1<<" : "<<this->figureList.at(i);
+    }
 
 }
 
