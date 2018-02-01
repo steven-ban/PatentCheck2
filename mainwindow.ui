@@ -84,7 +84,7 @@
         <item>
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
@@ -134,14 +134,14 @@
               <item>
                <widget class="QPushButton" name="pushButton_4">
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Add</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton_5">
                 <property name="text">
-                 <string>PushButton</string>
+                 <string>Delete</string>
                 </property>
                </widget>
               </item>
@@ -166,7 +166,7 @@
      <x>0</x>
      <y>0</y>
      <width>750</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

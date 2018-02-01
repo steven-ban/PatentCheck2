@@ -4,19 +4,20 @@
 #include <QDialog>
 
 namespace Ui {
-class textDlg;
+class TextDlg;
 }
 
-class textDlg : public QDialog
+class TextDlg : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit textDlg(QWidget *parent = 0);
-    ~textDlg();
+    explicit TextDlg(QWidget *parent = 0);
+    ~TextDlg();
 
 private:
-    Ui::textDlg *ui;
+    Ui::TextDlg *ui2;
+
 };
 
 #endif // TEXTDLG_H

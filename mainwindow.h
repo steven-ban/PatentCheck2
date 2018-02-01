@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "textdlg.h"
+#include "ui_textdlg.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -17,11 +20,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    TextDlg *textDlg;
 
 public slots:
     void showSettings();
-private slots:
-    void on_actionSettings_2_triggered();
+    void check();
+
 };
 
 #endif // MAINWINDOW_H

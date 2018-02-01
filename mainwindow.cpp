@@ -8,10 +8,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    textDlg = new TextDlg(this);
+    textDlg->hide();
 
     QSettings setting("SIPO-HN", "PatentCheck2");
 
-    connect(ui->actionSettings_2, SIGNAL(QAction::triggered()), this, SLOT(showSettings()));
+    connect(ui->actionSettings_2, SIGNAL(triggered()), this, SLOT(showSettings()));
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(check()));
+
+}
+
+void MainWindow::check(){
+
+
+    // 生成通知书
+    textDlg->show();
 
 }
 

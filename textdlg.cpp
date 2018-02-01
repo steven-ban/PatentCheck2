@@ -1,14 +1,14 @@
 #include "textdlg.h"
 #include "ui_textdlg.h"
 
-textDlg::textDlg(QWidget *parent) :
+TextDlg::TextDlg(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::textDlg)
+    ui2(new Ui::TextDlg)
 {
-    ui->setupUi(this);
+    ui2->setupUi(this);
 }
 
-textDlg::~textDlg()
+TextDlg::~TextDlg()
 {
-    delete ui;
+    delete ui2;
 }
