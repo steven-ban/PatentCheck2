@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = PatentCheck2
 TEMPLATE = app
 
+TRANSLATIONS += zh-cn.ts
+
 
 SOURCES += main.cpp\
         mainwindow.cpp \

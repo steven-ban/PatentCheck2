@@ -2,5 +2,7 @@
     <qresource lang="appIcon" prefix="/pic">
         <file>resources/appIcon.png</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/tran">
+        <file>zh-cn.qm</file>
+    </qresource>
 </RCC>
